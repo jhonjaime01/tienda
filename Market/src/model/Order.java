@@ -2,32 +2,38 @@
 //
 //import java.util.ArrayList;
 //
-//
 //public class Order {
 //
-////	private int id;
-////	private String nameClient;
-////	private String Date;
-////	private String payType;
-////	private ListProduct lis;
-//	
-//	private ArrayList<ListProduct> product;
-//	
-//		
+//	private ArrayList<ListProduct> listproduct;
+//
 //	public Order() {
-//		product = new ArrayList<>();
+//		listproduct = new ArrayList<>();
 //	}
-//	
-//	public ListProduct findListProduct(int idType) {
-//		
-//		for( ListProduct li: product) {
-//			
-//			if (ListProduct.) {
-//				
+//
+//	public ArrayList<ListProduct> getProduct() {
+//		return (ArrayList<ListProduct>) listproduct.clone();
+//	}
+//
+//	public boolean addStant(ListProduct list) {
+//
+//		if (getID(list.getIdType()) != list.getIdType()) {
+//			listproduct.add(list);
+//			return true;
+//		}
+//		return false;
+//	}
+//
+//	private int getID(int id) {
+//
+//		for (int i = 0; i < listproduct.size(); i++) {
+//			int temp = id;
+//			for (int j = 0; j < listproduct.size(); j++) {
+//				if (temp == listproduct.get(j).getIdType()) {
+//					return id;
+//				}
 //			}
 //		}
-//		
-//		return null;
+//
+//		return 0;
 //	}
-//	
 //}

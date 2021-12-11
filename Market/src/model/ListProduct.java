@@ -1,34 +1,14 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ListProduct {
 
-	private int idType;
-	private String type;
 	private ArrayList<Product> products;
-
-	public ListProduct(int idType, String type) {
-		this.idType=idType;
-		this.type=type;
-		products = new ArrayList<>();
-	}
 	
-	public int getIdType() {
-		return idType;
-	}
-
-	public void setIdType(int idType) {
-		this.idType = idType;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
+	
+	public ListProduct() {
+		products = new ArrayList<>();
 	}
 
 	public ArrayList<Product> getProducts() {
@@ -37,11 +17,12 @@ public class ListProduct {
 	
 	public boolean addProduct(Product product) {
 
-	
 		if (getID(product.getId())!=product.getId()) {
 			products.add(product);
+			System.out.println("Producto Agregado");
 			return true;
 		}
+		System.out.println();
 		return false;
 	}
 	
@@ -59,6 +40,22 @@ public class ListProduct {
 		
 		return 0;
 	}
+	
+	public String category(int num) {
+		
+		String category = null;
+		if (num == 1) {
+			category = "Viveres";
+		} else if (num == 2) {
+			category = "Licores";
+		} else if (num == 3) {
+			category = "Aseo";
+		} else{
+			category = "Frutas";
+		}
+
+		return category;
+	}
 
 	public class Product {
 
@@ -66,8 +63,12 @@ public class ListProduct {
 		private String name;
 		private int unitValue;
 		private int existingQuantity;
+		private int idCategory;
+		private String Category;
 
-		public Product(int id, String name, int unitValue, int existingQuantity) {
+		public Product(int idCategory, String category,int id, String name, int unitValue, int existingQuantity) {
+			this.idCategory= idCategory;
+			this.Category=category;			
 			this.id = id;
 			this.name = name;
 			this.unitValue = unitValue;
@@ -105,6 +106,24 @@ public class ListProduct {
 		public void setExistingQuantity(int existingQuantity) {
 			this.existingQuantity = existingQuantity;
 		}
+
+		public int getIdCategory() {
+			return idCategory;
+		}
+
+		public void setIdCategory(int idCategory) {
+			this.idCategory = idCategory;
+		}
+
+		public String getCategory() {
+			return Category;
+		}
+
+		public void setCategory(String category) {
+			Category = category;
+		}
+		
+	
 
 	}
 }
